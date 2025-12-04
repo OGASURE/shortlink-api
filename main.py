@@ -127,6 +127,9 @@ app = FastAPI(
     description="Minimal commercial-ready link shortener API.",
     version="0.1.0",
 )
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
 
 
 @app.on_event("startup")
